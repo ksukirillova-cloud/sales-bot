@@ -1,0 +1,251 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap');
+.sw{--bg:#F7F4EF;--bg2:#FFFFFF;--bg3:#F0EBE3;--tx:#1C1917;--tx2:#7A746E;--brd:rgba(28,25,23,.09);--acc:#E05C2A;--acc2:#FEF0E8;font-family:'DM Sans',sans-serif;color:var(--tx);background:var(--bg);border-radius:20px;overflow:hidden;max-width:680px}
+.sw *{box-sizing:border-box;margin:0;padding:0}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 2rem;border-bottom:1px solid var(--brd)}
+.nav-logo{font-family:'Syne',sans-serif;font-size:15px;font-weight:700}
+.nav-cta{background:var(--tx);color:var(--bg);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;padding:8px 18px;border-radius:100px;border:none;cursor:pointer}
+.nav-cta:hover{opacity:.8}
+.hero{padding:4rem 2rem 3.5rem;text-align:center;border-bottom:1px solid var(--brd)}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--tx2);background:var(--bg2);border:1px solid var(--brd);padding:5px 14px;border-radius:100px;margin-bottom:1.75rem;opacity:0;animation:fu .6s .05s forwards}
+.hero-tag span{width:6px;height:6px;border-radius:50%;background:var(--acc);display:inline-block}
+.hero h1{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;line-height:1.08;letter-spacing:-.035em;max-width:520px;margin:0 auto;opacity:0;animation:fu .6s .15s forwards}
+.hero h1 em{color:var(--acc);font-style:normal}
+.hero-sub{font-size:15px;color:var(--tx2);line-height:1.7;max-width:420px;margin:1.25rem auto 0;opacity:0;animation:fu .6s .28s forwards}
+.hero-cta{margin-top:2rem;opacity:0;animation:fu .6s .4s forwards}
+.btn-main{background:var(--acc);color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;padding:13px 28px;border-radius:100px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn-main:hover{background:#c04e22}
+.btn-soft{background:var(--bg2);color:var(--tx);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;padding:13px 24px;border-radius:100px;border:1px solid var(--brd);cursor:pointer;margin-left:8px}
+.btn-soft:hover{background:var(--bg3)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--brd)}
+.st{padding:1.75rem 2rem;text-align:center;border-right:1px solid var(--brd)}
+.st:last-child{border-right:none}
+.stn{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--acc);line-height:1}
+.stl{font-size:11px;color:var(--tx2);margin-top:.4rem;line-height:1.45}
+.sec{padding:3rem 2rem;border-bottom:1px solid var(--brd);opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
+.sec.vis{opacity:1;transform:none}
+.sec-tag{display:inline-block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--tx2);margin-bottom:1.25rem}
+.sh{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;line-height:1.15;letter-spacing:-.025em;margin-bottom:.75rem}
+.sh em{color:var(--acc);font-style:normal}
+.sp{font-size:14px;color:var(--tx2);line-height:1.75;max-width:480px}
+.stmt{background:var(--bg2);border-radius:20px;padding:2.5rem}
+.stmt h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;line-height:1.2;letter-spacing:-.025em}
+.stmt h2 em{color:var(--acc);font-style:normal}
+.stmt p{font-size:13px;color:var(--tx2);line-height:1.8;margin-top:1rem;max-width:460px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:1.5rem}
+.svc{background:var(--bg2);border-radius:16px;padding:1.5rem;border:1px solid var(--brd);transition:border-color .2s}
+.svc:hover{border-color:rgba(224,92,42,.25)}
+.svc i{font-size:20px;color:var(--acc);margin-bottom:.75rem;display:block}
+.svc h3{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:.4rem}
+.svc p{font-size:12px;color:var(--tx2);line-height:1.65}
+.pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:1.5rem}
+.pkg{background:var(--bg2);border:1px solid var(--brd);border-radius:20px;padding:1.5rem;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.pkg:hover{border-color:rgba(224,92,42,.3);transform:translateY(-3px)}
+.pkg.hot{border-color:var(--acc);background:var(--acc2)}
+.pbadge{font-size:9px;font-weight:500;background:var(--acc);color:#fff;padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:.75rem;align-self:flex-start}
+.pn{font-family:'Syne',sans-serif;font-size:13px;font-weight:700}
+.pp{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--acc);margin:.5rem 0 .2rem;line-height:1}
+.pt{font-size:10px;color:var(--tx2);margin-bottom:.9rem}
+.pkg ul{list-style:none;flex:1}
+.pkg ul li{font-size:11px;color:var(--tx2);padding:3px 0;display:flex;gap:6px;align-items:flex-start;line-height:1.55}
+.pkg ul li i{font-size:11px;color:var(--acc);flex-shrink:0;margin-top:3px}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:1.5rem}
+.pc{background:var(--bg2);border:1px solid var(--brd);border-radius:16px;padding:1.4rem;transition:border-color .2s}
+.pc:hover{border-color:rgba(224,92,42,.25)}
+.pc i{font-size:18px;color:var(--tx2);margin-bottom:.6rem;display:block}
+.pc h3{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;margin-bottom:.35rem}
+.pc p{font-size:11px;color:var(--tx2);line-height:1.6}
+.pc-p{font-size:12px;font-weight:500;color:var(--acc);margin-top:.6rem}
+.why-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:1.5rem}
+.why-card{background:var(--bg2);border-radius:16px;padding:1.5rem 1.75rem;border:1px solid var(--brd);display:flex;gap:1.25rem;align-items:flex-start}
+.why-num{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;color:var(--acc);line-height:1;flex-shrink:0;width:48px}
+.why-card h3{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:.4rem}
+.why-card p{font-size:12px;color:var(--tx2);line-height:1.7}
+.ai-badge{display:inline-flex;align-items:center;gap:5px;font-size:10px;background:var(--acc2);color:var(--acc);padding:3px 10px;border-radius:100px;margin-top:.5rem;font-weight:500}
+.articles-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.5rem}
+.articles-header a{font-size:12px;color:var(--acc);text-decoration:none;font-weight:500}
+.articles-header a:hover{text-decoration:underline}
+.art-featured{background:var(--bg2);border-radius:20px;padding:2rem;border:1px solid var(--brd);margin-bottom:12px;transition:border-color .2s;cursor:pointer}
+.art-featured:hover{border-color:rgba(224,92,42,.25)}
+.art-cat{display:inline-block;font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--acc);background:var(--acc2);padding:3px 10px;border-radius:100px;margin-bottom:.9rem;font-weight:500}
+.art-featured h3{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:.6rem;letter-spacing:-.01em}
+.art-featured p{font-size:12px;color:var(--tx2);line-height:1.7}
+.art-meta{display:flex;align-items:center;gap:.75rem;margin-top:1rem;font-size:11px;color:var(--tx2)}
+.art-meta span{display:flex;align-items:center;gap:4px}
+.art-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.art-card{background:var(--bg2);border-radius:16px;padding:1.4rem;border:1px solid var(--brd);transition:border-color .2s;cursor:pointer;display:flex;flex-direction:column}
+.art-card:hover{border-color:rgba(224,92,42,.25)}
+.art-card .art-cat{margin-bottom:.7rem}
+.art-card h3{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;line-height:1.35;margin-bottom:.5rem;flex:1}
+.art-card p{font-size:11px;color:var(--tx2);line-height:1.6}
+.art-card .art-meta{margin-top:.85rem}
+.cta-wrap{padding:3.5rem 2rem;text-align:center}
+.cta-wrap h2{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;line-height:1.15;letter-spacing:-.025em;margin-bottom:.65rem}
+.cta-wrap h2 em{color:var(--acc);font-style:normal}
+.cta-wrap p{font-size:13px;color:var(--tx2);margin-bottom:1.75rem}
+.foot{padding:1.5rem 2rem;border-top:1px solid var(--brd);display:flex;justify-content:space-between;align-items:center}
+.foot p{font-size:11px;color:var(--tx2)}
+@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+</style>
+
+<div><div class="sw">
+
+<nav class="nav">
+  <div class="nav-logo">Сканлайт Маркетинг</div>
+  <button class="nav-cta" onclick="sendPrompt('Хочу обсудить проект')">Начать проект</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag"><span></span>Маркетинг для бизнеса</div>
+  <h1>Маркетинг от тех,<br>кто вас <em>уже знает.</em></h1>
+  <p class="hero-sub">Сайты, реклама, контент и продвижение для розницы, складов и B2B. 15 лет внутри вашего рынка.</p>
+  <div class="hero-cta">
+    <button class="btn-main" onclick="sendPrompt('Хочу начать проект')"><i class="ti ti-arrow-right" aria-hidden="true"></i>Начать проект</button>
+    <button class="btn-soft">Услуги и цены</button>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="st"><div class="stn">15</div><div class="stl">лет в рынке</div></div>
+  <div class="st"><div class="stn">2009</div><div class="stl">год основания</div></div>
+  <div class="st"><div class="stn">0</div><div class="stl">менеджеров между<br>вами и командой</div></div>
+</div>
+
+<div class="sec">
+  <div class="stmt">
+    <h2>Ваше агентство гуглит вашу нишу. <em>Мы в ней 15 лет.</em></h2>
+    <p>С 2009 года продаём торгово-кассовое оборудование той же рознице, складам и B2B, с которыми теперь работаем как маркетологи. Знаем где болит — нам говорили.</p>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-tag">Что делаем</div>
+  <h2 class="sh">Разовые работы</h2>
+  <div class="g2">
+    <div class="svc"><i class="ti ti-zoom-money" aria-hidden="true"></i><h3>Маркетинговый аудит</h3><p>Где теряете клиентов. Что не работает. Конкретный план действий.</p></div>
+    <div class="svc"><i class="ti ti-map-2" aria-hidden="true"></i><h3>Стратегия продвижения</h3><p>Что делать в первые 3 месяца, в каком порядке и зачем.</p></div>
+    <div class="svc"><i class="ti ti-device-laptop" aria-hidden="true"></i><h3>Сайт или лендинг</h3><p>С нормальным текстом и структурой. Не красиво ради красиво — чтобы продавал.</p></div>
+    <div class="svc"><i class="ti ti-package" aria-hidden="true"></i><h3>Карточки на маркетплейсах</h3><p>WB, Ozon — фото, описания, SEO внутри карточки.</p></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-tag">Продвижение</div>
+  <h2 class="sh">Ежемесячное сопровождение</h2>
+  <p class="sp">Платите каждый месяц — получаете результат постоянно.</p>
+  <div class="pgrid">
+    <div class="pc"><i class="ti ti-ad-2" aria-hidden="true"></i><h3>Яндекс Директ</h3><p>Ведение рекламных кампаний. Ставки, ключи, конверсии под контролем.</p><div class="pc-p">от 25 000 ₽/мес</div></div>
+    <div class="pc"><i class="ti ti-map-pin" aria-hidden="true"></i><h3>Геореклама</h3><p>Яндекс Карты и 2ГИС. Для розницы — обязательно.</p><div class="pc-p">от 10 000 ₽/мес</div></div>
+    <div class="pc"><i class="ti ti-pencil" aria-hidden="true"></i><h3>Контент и соцсети</h3><p>ВКонтакте и Телеграм. Упаковка канала, контент-план, регулярные публикации.</p><div class="pc-p">от 20 000 ₽/мес</div></div>
+    <div class="pc"><i class="ti ti-mail" aria-hidden="true"></i><h3>Рассылки</h3><p>Email и WhatsApp по вашей базе. Акции, реактивация, новинки.</p><div class="pc-p">от 8 000 ₽/кампания</div></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-tag">Пакеты</div>
+  <h2 class="sh">Выберите точку входа</h2>
+  <p class="sp">Начните с аудита — поймёте где теряете деньги. Дальше решите сами.</p>
+  <div class="pkgs">
+    <div class="pkg">
+      <div class="pn">Старт</div><div class="pp">25 000 ₽</div><div class="pt">разово · 3–5 дней</div>
+      <ul><li><i class="ti ti-check" aria-hidden="true"></i>Маркетинговый аудит</li><li><i class="ti ti-check" aria-hidden="true"></i>Точки роста и потери</li><li><i class="ti ti-check" aria-hidden="true"></i>Приоритеты</li><li><i class="ti ti-check" aria-hidden="true"></i>Понятный документ</li></ul>
+    </div>
+    <div class="pkg hot">
+      <div class="pbadge">Популярный</div>
+      <div class="pn">Рост</div><div class="pp">60 000 ₽</div><div class="pt">разово · 1–2 недели</div>
+      <ul><li><i class="ti ti-check" aria-hidden="true"></i>Аудит</li><li><i class="ti ti-check" aria-hidden="true"></i>Стратегия</li><li><i class="ti ti-check" aria-hidden="true"></i>План на 3 месяца</li><li><i class="ti ti-check" aria-hidden="true"></i>Разбор с командой</li></ul>
+    </div>
+    <div class="pkg">
+      <div class="pn">Под ключ</div><div class="pp">150 000 ₽</div><div class="pt">разово + ведение</div>
+      <ul><li><i class="ti ti-check" aria-hidden="true"></i>Аудит + стратегия</li><li><i class="ti ti-check" aria-hidden="true"></i>Сайт или лендинг</li><li><i class="ti ti-check" aria-hidden="true"></i>Запуск рекламы</li><li><i class="ti ti-check" aria-hidden="true"></i>Месяц ведения</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-tag">Почему мы</div>
+  <h2 class="sh">Три причины,<br>которые <em>реально важны</em></h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-num">01</div>
+      <div><h3>Знаем ваш рынок изнутри</h3><p>Мы не изучали розницу и склады по учебнику. Мы 15 лет продавали им оборудование, слышали их боли, видели как они продают и где теряют клиентов.</p></div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">02</div>
+      <div>
+        <h3>Используем нейросети — поэтому быстрее и дешевле</h3>
+        <p>Активно работаем с AI: тексты для сайтов, контент, SEO-структуры, рекламные объявления. Это ускоряет работу в 2–3 раза. Стоимость ниже, чем у классического агентства. Качество проверяет человек с 15 годами опыта.</p>
+        <div class="ai-badge"><i class="ti ti-sparkles" style="font-size:10px" aria-hidden="true"></i>AI-assisted работа</div>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">03</div>
+      <div><h3>Маленькая команда без оверхеда</h3><p>Нет раздутого штата, нет менеджеров между вами и теми, кто делает работу. Вы общаетесь напрямую с маркетологом и продажником, которые принимают решения.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="articles-header">
+    <div>
+      <div class="sec-tag">Блог</div>
+      <h2 class="sh" style="margin-bottom:0">Статьи и разборы</h2>
+    </div>
+    <a href="#">Все статьи →</a>
+  </div>
+
+  <div class="art-featured">
+    <div class="art-cat">Маркетинг для розницы</div>
+    <h3>Почему реклама в Яндекс Директ не работает для небольших магазинов — и как это исправить</h3>
+    <p>Разбираем 5 типичных ошибок, которые сливают бюджет. С конкретными примерами из практики работы с розничными клиентами.</p>
+    <div class="art-meta">
+      <span><i class="ti ti-calendar" style="font-size:11px" aria-hidden="true"></i>12 мая 2025</span>
+      <span><i class="ti ti-clock" style="font-size:11px" aria-hidden="true"></i>7 мин</span>
+    </div>
+  </div>
+
+  <div class="art-grid">
+    <div class="art-card">
+      <div class="art-cat">Геореклама</div>
+      <h3>2ГИС или Яндекс Карты: что выбрать для розничной точки в 2025 году</h3>
+      <p>Сравниваем форматы, стоимость и результаты на реальных данных.</p>
+      <div class="art-meta"><span><i class="ti ti-clock" style="font-size:11px" aria-hidden="true"></i>5 мин</span></div>
+    </div>
+    <div class="art-card">
+      <div class="art-cat">Контент</div>
+      <h3>Как вести Телеграм-канал для B2B, если нечего писать</h3>
+      <p>Простая система контент-плана для компаний, у которых нет маркетолога.</p>
+      <div class="art-meta"><span><i class="ti ti-clock" style="font-size:11px" aria-hidden="true"></i>6 мин</span></div>
+    </div>
+    <div class="art-card">
+      <div class="art-cat">Маркетплейсы</div>
+      <h3>Карточка товара на Ozon: чек-лист из 12 пунктов перед публикацией</h3>
+      <p>Что проверить до запуска, чтобы карточку находили и покупали.</p>
+      <div class="art-meta"><span><i class="ti ti-clock" style="font-size:11px" aria-hidden="true"></i>4 мин</span></div>
+    </div>
+    <div class="art-card">
+      <div class="art-cat">Инструменты</div>
+      <h3>Нейросети в маркетинге для малого бизнеса: что реально работает</h3>
+      <p>Без хайпа — только инструменты, которые экономят время и деньги прямо сейчас.</p>
+      <div class="art-meta"><span><i class="ti ti-clock" style="font-size:11px" aria-hidden="true"></i>8 мин</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-wrap sec">
+  <h2>Начните с аудита.<br><em>Разберёмся вместе.</em></h2>
+  <p>Смотрим где вы теряете клиентов. Без обязательств — просто честный разговор.</p>
+  <button class="btn-main" onclick="sendPrompt('Хочу маркетинговый аудит для своего бизнеса')"><i class="ti ti-arrow-right" aria-hidden="true"></i>Обсудить проект</button>
+</div>
+
+<div class="foot">
+  <p>Сканлайт Маркетинг · scan-lite.ru</p>
+  <p>© 2025</p>
+</div>
+
+</div></div>
+<script>
+const o=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');o.unobserve(e.target)}})},{threshold:0.07});
+document.querySelectorAll('.sec').forEach(s=>o.observe(s));
+</script>
