@@ -1,427 +1,388 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сканлайт Маркетинг — Маркетинг от тех, кто вас уже знает</title>
 
-  <title>Сканлайт Маркетинг</title>
-  <meta
-    name="description"
-    content="Маркетинг для розницы, складов и B2B. Сайты, реклама, контент и продвижение."
-  />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
-  />
-
-  <style>
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap');
-
-body{
-  margin:0;
-  background:#f3efe8;
-  padding:40px 20px;
-}
-
-.sw{
+<style>
+:root{
   --bg:#F7F4EF;
   --bg2:#FFFFFF;
-  --bg3:#F0EBE3;
+  --bg3:#EDE8E0;
+  --bg4:#1C1917;
   --tx:#1C1917;
   --tx2:#7A746E;
+  --tx3:#B8B0A8;
   --brd:rgba(28,25,23,.09);
   --acc:#E05C2A;
   --acc2:#FEF0E8;
-
-  font-family:'DM Sans',sans-serif;
-  color:var(--tx);
-  background:var(--bg);
-  border-radius:20px;
-  overflow:hidden;
-  max-width:1180px;
-  margin:0 auto;
+  --green:#2D9B6F;
 }
 
-.sw *{
-  box-sizing:border-box;
+*{
   margin:0;
-  padding:0
+  padding:0;
+  box-sizing:border-box;
 }
 
-.nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:1.25rem 2rem;
-  border-bottom:1px solid var(--brd)
+html{
+  scroll-behavior:smooth;
 }
 
-.nav-logo{
-  font-family:'Syne',sans-serif;
-  font-size:15px;
-  font-weight:700
-}
-
-.nav-cta{
-  background:var(--tx);
-  color:var(--bg);
+body{
+  background:var(--bg);
+  color:var(--tx);
   font-family:'DM Sans',sans-serif;
-  font-size:12px;
-  font-weight:500;
-  padding:8px 18px;
-  border-radius:100px;
-  border:none;
-  cursor:pointer
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
 }
 
-.nav-cta:hover{
-  opacity:.8
+/* NAV */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(247,244,239,.95);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--brd);
 }
+
+.nav-i{
+  max-width:1100px;
+  margin:0 auto;
+  padding:1rem 2rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.nlogo{
+  font-family:'Syne',sans-serif;
+  font-size:16px;
+  font-weight:700;
+  color:var(--tx);
+  text-decoration:none;
+}
+
+.nlinks{
+  list-style:none;
+  display:flex;
+  gap:2rem;
+}
+
+.nlinks a{
+  text-decoration:none;
+  color:var(--tx2);
+  font-size:14px;
+}
+
+.ncta{
+  background:var(--tx);
+  color:white;
+  text-decoration:none;
+  padding:11px 20px;
+  border-radius:999px;
+  font-size:14px;
+}
+
+/* HERO */
 
 .hero{
-  padding:5rem 2rem 4rem;
-  text-align:center;
-  border-bottom:1px solid var(--brd)
-}
-
-.hero-tag{
-  display:inline-flex;
+  max-width:1100px;
+  margin:0 auto;
+  padding:5rem 2rem;
+  display:flex;
+  gap:4rem;
   align-items:center;
-  gap:6px;
-  font-size:11px;
-  color:var(--tx2);
-  background:var(--bg2);
-  border:1px solid var(--brd);
-  padding:5px 14px;
-  border-radius:100px;
-  margin-bottom:1.75rem;
-  opacity:0;
-  animation:fu .6s .05s forwards
 }
 
-.hero-tag span{
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:var(--acc);
-  display:inline-block
+.hero-l{
+  flex:1;
+}
+
+.htag{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  background:white;
+  border:1px solid var(--brd);
+  padding:7px 14px;
+  border-radius:999px;
+  font-size:12px;
+  color:var(--tx2);
+  margin-bottom:1.5rem;
 }
 
 .hero h1{
   font-family:'Syne',sans-serif;
-  font-size:56px;
-  font-weight:800;
-  line-height:1.02;
-  letter-spacing:-.045em;
-  max-width:760px;
-  margin:0 auto;
-  opacity:0;
-  animation:fu .6s .15s forwards
+  font-size:58px;
+  line-height:1;
+  letter-spacing:-0.05em;
+  margin-bottom:1.5rem;
 }
 
 .hero h1 em{
   color:var(--acc);
-  font-style:normal
+  font-style:normal;
 }
 
-.hero-sub{
+.hsub{
   font-size:18px;
   color:var(--tx2);
-  line-height:1.7;
-  max-width:600px;
-  margin:1.5rem auto 0;
-  opacity:0;
-  animation:fu .6s .28s forwards
+  max-width:560px;
+  line-height:1.8;
 }
 
-.hero-cta{
+.hbtns{
   margin-top:2rem;
-  opacity:0;
-  animation:fu .6s .4s forwards
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
 }
 
-.btn-main{
+.bpri{
   background:var(--acc);
-  color:#fff;
-  font-family:'DM Sans',sans-serif;
-  font-size:14px;
-  font-weight:500;
-  padding:14px 30px;
-  border-radius:100px;
-  border:none;
-  cursor:pointer;
+  color:white;
+  padding:14px 26px;
+  border-radius:999px;
+  text-decoration:none;
   display:inline-flex;
   align-items:center;
-  gap:8px
+  gap:8px;
 }
 
-.btn-main:hover{
-  background:#c04e22
-}
-
-.btn-soft{
-  background:var(--bg2);
-  color:var(--tx);
-  font-family:'DM Sans',sans-serif;
-  font-size:14px;
-  font-weight:500;
-  padding:14px 24px;
-  border-radius:100px;
+.bsec{
+  background:white;
   border:1px solid var(--brd);
-  cursor:pointer;
-  margin-left:8px
+  color:var(--tx);
+  padding:14px 24px;
+  border-radius:999px;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
 }
 
-.btn-soft:hover{
-  background:var(--bg3)
+.hero-r{
+  width:320px;
 }
 
-.stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  border-bottom:1px solid var(--brd)
-}
-
-.st{
+.hcard{
+  background:var(--bg4);
+  color:white;
+  border-radius:28px;
   padding:2rem;
-  text-align:center;
-  border-right:1px solid var(--brd)
 }
 
-.st:last-child{
-  border-right:none
-}
-
-.stn{
+.hc-big{
   font-family:'Syne',sans-serif;
-  font-size:34px;
-  font-weight:800;
+  font-size:54px;
   color:var(--acc);
-  line-height:1
+  margin:1rem 0;
 }
 
-.stl{
-  font-size:12px;
-  color:var(--tx2);
-  margin-top:.5rem;
-  line-height:1.5
+.hpoints{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:1.5rem;
+}
+
+.hpoint{
+  font-size:13px;
+  opacity:.8;
+}
+
+/* SECTION */
+
+.section{
+  border-top:1px solid var(--brd);
 }
 
 .sec{
-  padding:4rem 2rem;
-  border-bottom:1px solid var(--brd);
-  opacity:0;
-  transform:translateY(20px);
-  transition:opacity .55s ease,transform .55s ease
+  max-width:1100px;
+  margin:0 auto;
+  padding:5rem 2rem;
 }
 
-.sec.vis{
-  opacity:1;
-  transform:none
-}
-
-.sec-tag{
-  display:inline-block;
-  font-size:10px;
-  letter-spacing:.08em;
+.stag{
+  font-size:11px;
   text-transform:uppercase;
+  letter-spacing:.08em;
   color:var(--tx2);
-  margin-bottom:1.25rem
+  display:block;
+  margin-bottom:1rem;
 }
 
 .sh{
   font-family:'Syne',sans-serif;
-  font-size:34px;
-  font-weight:800;
+  font-size:42px;
   line-height:1.1;
-  letter-spacing:-.03em;
-  margin-bottom:.75rem
+  letter-spacing:-0.04em;
+  margin-bottom:1rem;
 }
 
 .sh em{
   color:var(--acc);
-  font-style:normal
+  font-style:normal;
 }
 
 .sp{
-  font-size:15px;
+  font-size:17px;
   color:var(--tx2);
-  line-height:1.8;
-  max-width:520px
+  max-width:720px;
 }
 
-.stmt{
-  background:var(--bg2);
-  border-radius:24px;
-  padding:3rem
-}
+/* CARDS */
 
-.stmt h2{
-  font-family:'Syne',sans-serif;
-  font-size:34px;
-  font-weight:800;
-  line-height:1.15;
-  letter-spacing:-.03em
-}
-
-.stmt h2 em{
-  color:var(--acc);
-  font-style:normal
-}
-
-.stmt p{
-  font-size:15px;
-  color:var(--tx2);
-  line-height:1.8;
-  margin-top:1rem;
-  max-width:620px
-}
-
-.g2{
+.grid-2{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:16px;
-  margin-top:1.5rem
+  margin-top:2rem;
 }
 
-.svc{
-  background:var(--bg2);
-  border-radius:18px;
-  padding:1.75rem;
+.card{
+  background:white;
   border:1px solid var(--brd);
-  transition:border-color .2s
+  border-radius:24px;
+  padding:2rem;
 }
 
-.svc:hover{
-  border-color:rgba(224,92,42,.25)
-}
-
-.svc i{
-  font-size:22px;
-  color:var(--acc);
-  margin-bottom:.75rem;
-  display:block
-}
-
-.svc h3{
+.card h3{
   font-family:'Syne',sans-serif;
-  font-size:16px;
-  font-weight:700;
-  margin-bottom:.5rem
+  margin-bottom:.7rem;
+  font-size:18px;
 }
 
-.svc p{
-  font-size:13px;
+.card p{
   color:var(--tx2);
-  line-height:1.7
+  font-size:15px;
+  line-height:1.8;
 }
 
-.foot{
-  padding:1.5rem 2rem;
+/* CTA */
+
+.cta-wrap{
+  padding:5rem 2rem;
+}
+
+.cta-inner{
+  max-width:1100px;
+  margin:0 auto;
+  background:var(--bg4);
+  color:white;
+  border-radius:32px;
+  padding:4rem;
+  text-align:center;
+}
+
+.cta-inner h2{
+  font-family:'Syne',sans-serif;
+  font-size:42px;
+  line-height:1.1;
+  margin-bottom:1rem;
+}
+
+.cta-inner h2 em{
+  color:var(--acc);
+  font-style:normal;
+}
+
+.cta-inner p{
+  opacity:.7;
+  max-width:620px;
+  margin:0 auto 2rem;
+  font-size:17px;
+}
+
+/* FOOTER */
+
+footer{
+  max-width:1100px;
+  margin:0 auto;
+  padding:2rem;
   border-top:1px solid var(--brd);
   display:flex;
   justify-content:space-between;
-  align-items:center
+  flex-wrap:wrap;
+  gap:1rem;
 }
 
-.foot p{
-  font-size:11px;
-  color:var(--tx2)
+footer p{
+  font-size:13px;
+  color:var(--tx2);
 }
 
-@keyframes fu{
-  from{
-    opacity:0;
-    transform:translateY(16px)
-  }
-  to{
-    opacity:1;
-    transform:none
-  }
-}
+/* MOBILE */
 
 @media(max-width:768px){
 
-  body{
-    padding:0
-  }
-
-  .sw{
-    border-radius:0
+  .hero{
+    flex-direction:column;
   }
 
   .hero h1{
-    font-size:38px
+    font-size:42px;
   }
 
-  .hero-sub{
-    font-size:16px
+  .grid-2{
+    grid-template-columns:1fr;
   }
 
-  .stats{
-    grid-template-columns:1fr
+  .nlinks{
+    display:none;
   }
 
-  .st{
-    border-right:none;
-    border-bottom:1px solid var(--brd)
+  .hero-r{
+    width:100%;
   }
 
-  .g2{
-    grid-template-columns:1fr
+  .cta-inner{
+    padding:2.5rem 1.5rem;
   }
 
-  .sh{
-    font-size:28px
-  }
-
-  .stmt h2{
-    font-size:28px
-  }
-
-  .nav{
-    padding:1rem 1.2rem
-  }
-
-  .hero{
-    padding:4rem 1.2rem
-  }
-
-  .sec{
-    padding:3rem 1.2rem
-  }
-
-  .stmt{
-    padding:2rem
-  }
-
-  .foot{
-    flex-direction:column;
-    gap:8px;
-    text-align:center
+  .cta-inner h2{
+    font-size:32px;
   }
 }
-  </style>
+</style>
 </head>
 
 <body>
 
-<div class="sw">
+<!-- NAV -->
 
-  <nav class="nav">
-    <div class="nav-logo">Сканлайт Маркетинг</div>
+<nav>
+  <div class="nav-i">
+    <a href="#" class="nlogo">Сканлайт Маркетинг</a>
 
-    <button class="nav-cta" onclick="sendPrompt('Хочу обсудить проект')">
-      Начать проект
-    </button>
-  </nav>
+    <ul class="nlinks">
+      <li><a href="#about">О нас</a></li>
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#cases">Кейсы</a></li>
+      <li><a href="#contact">Контакт</a></li>
+    </ul>
 
-  <div class="hero">
+    <a href="#contact" class="ncta">Диагностика</a>
+  </div>
+</nav>
 
-    <div class="hero-tag">
-      <span></span>
-      Маркетинг для бизнеса
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-l">
+
+    <div class="htag">
+      <i class="ti ti-bolt"></i>
+      Маркетинг для B2B и розницы
     </div>
 
     <h1>
@@ -429,110 +390,89 @@ body{
       кто вас <em>уже знает.</em>
     </h1>
 
-    <p class="hero-sub">
-      Сайты, реклама, контент и продвижение для розницы,
-      складов и B2B. 15 лет внутри вашего рынка.
+    <p class="hsub">
+      Сайты, реклама и продвижение для розницы, складов и B2B.
+      Без бесконечных созвонов и агентских переплат.
     </p>
 
-    <div class="hero-cta">
+    <div class="hbtns">
+      <a href="#contact" class="bpri">
+        <i class="ti ti-stethoscope"></i>
+        Получить диагностику
+      </a>
 
-      <button class="btn-main" onclick="sendPrompt('Хочу начать проект')">
-        <i class="ti ti-arrow-right"></i>
-        Начать проект
-      </button>
-
-      <button class="btn-soft">
-        Услуги и цены
-      </button>
-
+      <a href="#cases" class="bsec">
+        <i class="ti ti-chart-bar"></i>
+        Смотреть кейсы
+      </a>
     </div>
+
   </div>
 
-  <div class="stats">
+  <div class="hero-r">
 
-    <div class="st">
-      <div class="stn">15</div>
-      <div class="stl">лет в рынке</div>
-    </div>
+    <div class="hcard">
 
-    <div class="st">
-      <div class="stn">2009</div>
-      <div class="stl">год основания</div>
-    </div>
-
-    <div class="st">
-      <div class="stn">0</div>
-      <div class="stl">
-        менеджеров между<br>
-        вами и командой
+      <div style="opacity:.6;font-size:12px;">
+        Потенциал роста
       </div>
-    </div>
 
-  </div>
+      <div class="hc-big">
+        +47%
+      </div>
 
-  <div class="sec">
+      <div style="opacity:.7;font-size:14px;">
+        после исправления маркетинга
+      </div>
 
-    <div class="stmt">
-
-      <h2>
-        Ваше агентство гуглит вашу нишу.
-        <em>Мы в ней 15 лет.</em>
-      </h2>
-
-      <p>
-        С 2009 года продаём торгово-кассовое оборудование
-        той же рознице, складам и B2B, с которыми теперь
-        работаем как маркетологи.
-      </p>
+      <div class="hpoints">
+        <div class="hpoint">• Директ сливает бюджет</div>
+        <div class="hpoint">• Нет системы продаж</div>
+        <div class="hpoint">• Не работает база клиентов</div>
+        <div class="hpoint">• Сайт не продаёт</div>
+      </div>
 
     </div>
 
   </div>
 
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
   <div class="sec">
 
-    <div class="sec-tag">
-      Что делаем
-    </div>
+    <span class="stag">Почему мы</span>
 
     <h2 class="sh">
-      Разовые работы
+      Не изучаем рынок.<br>
+      <em>Мы в нём работали.</em>
     </h2>
 
-    <div class="g2">
+    <p class="sp">
+      Scan-lite.ru продавал оборудование той же аудитории,
+      для которой мы сейчас делаем маркетинг.
+      Поэтому понимаем как мыслят ваши клиенты,
+      как принимают решения и где бизнес теряет деньги.
+    </p>
 
-      <div class="svc">
-        <i class="ti ti-zoom-money"></i>
-        <h3>Маркетинговый аудит</h3>
+    <div class="grid-2">
+
+      <div class="card">
+        <h3>11 лет в маркетинге</h3>
         <p>
-          Где теряете клиентов. Что не работает.
-          Конкретный план действий.
+          B2B, ритейл, IT, события, маркетплейсы,
+          контекстная реклама и SEO.
         </p>
       </div>
 
-      <div class="svc">
-        <i class="ti ti-map-2"></i>
-        <h3>Стратегия продвижения</h3>
+      <div class="card">
+        <h3>AI + опыт</h3>
         <p>
-          Что делать в первые 3 месяца,
-          в каком порядке и зачем.
-        </p>
-      </div>
-
-      <div class="svc">
-        <i class="ti ti-device-laptop"></i>
-        <h3>Сайт или лендинг</h3>
-        <p>
-          С нормальным текстом и структурой.
-          Чтобы продавал.
-        </p>
-      </div>
-
-      <div class="svc">
-        <i class="ti ti-package"></i>
-        <h3>Маркетплейсы</h3>
-        <p>
-          WB, Ozon — фото, описания и SEO.
+          Используем нейросети для скорости,
+          но всё проверяет маркетолог с опытом.
         </p>
       </div>
 
@@ -540,39 +480,153 @@ body{
 
   </div>
 
-  <div class="foot">
-    <p>Сканлайт Маркетинг · scan-lite.ru</p>
-    <p>© 2025</p>
+</section>
+
+<!-- SERVICES -->
+
+<section class="section" id="services">
+
+  <div class="sec">
+
+    <span class="stag">Услуги</span>
+
+    <h2 class="sh">
+      Что можем сделать<br>
+      <em>для вашего бизнеса</em>
+    </h2>
+
+    <div class="grid-2">
+
+      <div class="card">
+        <h3>Диагностика маркетинга</h3>
+        <p>
+          Разберём рекламу, сайт, аналитику,
+          CRM и покажем где вы теряете деньги.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Сайт или лендинг</h3>
+        <p>
+          Современный сайт с нормальной структурой,
+          SEO и сильным текстом.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Яндекс Директ</h3>
+        <p>
+          Настройка и оптимизация рекламы
+          без слива бюджета.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Контент и Telegram</h3>
+        <p>
+          Контент-план, статьи,
+          посты и упаковка бренда.
+        </p>
+      </div>
+
+    </div>
+
   </div>
 
-</div>
+</section>
 
-<script>
+<!-- CASES -->
 
-function sendPrompt(text){
-  alert(text)
-}
+<section class="section" id="cases">
 
-const observer = new IntersectionObserver(entries => {
+  <div class="sec">
 
-  entries.forEach(entry => {
+    <span class="stag">Кейсы</span>
 
-    if(entry.isIntersecting){
-      entry.target.classList.add('vis')
-      observer.unobserve(entry.target)
-    }
+    <h2 class="sh">
+      Реальные проекты.<br>
+      <em>Реальные результаты.</em>
+    </h2>
 
-  })
+    <div class="grid-2">
 
-}, {
-  threshold:0.07
-})
+      <div class="card">
+        <h3>ПАРМА</h3>
 
-document.querySelectorAll('.sec').forEach(section => {
-  observer.observe(section)
-})
+        <p>
+          Система маркетинга с нуля:
+          сайт, email, Директ,
+          контент и работа с базой.
+        </p>
 
-</script>
+        <p style="margin-top:1rem;">
+          <strong>2 продажи</strong> с бюджета 10 000 ₽
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Штрих-М</h3>
+
+        <p>
+          SEO и контекстная реклама
+          для дилера кассового оборудования.
+        </p>
+
+        <p style="margin-top:1rem;">
+          <strong>ROI > 200%</strong>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta-wrap" id="contact">
+
+  <div class="cta-inner">
+
+    <h2>
+      Начните с диагностики.<br>
+      <em>Разберёмся за 30 минут.</em>
+    </h2>
+
+    <p>
+      Покажем где вы теряете клиентов,
+      и что даст результат быстрее всего.
+    </p>
+
+    <a href="mailto:hello@sales-bot.ru" class="bpri">
+      <i class="ti ti-mail"></i>
+      Связаться
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div>
+    <p style="font-family:'Syne',sans-serif;font-size:15px;font-weight:700;">
+      Сканлайт Маркетинг
+    </p>
+
+    <p>
+      Маркетинг для B2B и розницы
+    </p>
+  </div>
+
+  <p>
+    © 2026
+  </p>
+
+</footer>
 
 </body>
 </html>
